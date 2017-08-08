@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="Absolute-Center is-Responsive">
+    <div class="login-block content">
+      <h2>Register</h2>
+      <!-- Here we are declaring a local variable called “form” and setting it to an instance of ngForm. This is very important. Now our local form variable becomes of type FormGroup allowing us access to the FormGroup API’s on this local variable. We use this in the ngSubmit event where we send the value of the form via form.value -->
+      <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+        <div class="form-group ">
+          <div class="input-wrapper">
+            <label>User Name:</label>
+            <div class="input-i">
+              <span class="img-user"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="text" style="display: none" />
+              <!--<input type="text" name="UserName" [(ngModel)]="UserName" value="" placeholder="Username" id="username"  />-->
+              <input type="text" class="form-control" placeholder="John" name="userName" tabindex="1" ngModel required>
+            </div>
+          </div>
+
+          <!-- Since we are working with template driven forms, we can use the ngModel directive to capture the values of our forms. One thing to note if you are coming from Angular 1.x. Using ngModel as shown below creates a one-way data binding, so once we hit submit the data is only sent to the controller. If we wanted to use two-way data binding, we would have to wrap the ngModel in [()] and assign an attribute to it. Also the name of the field corresponds to the name attribute so our first input will be firstName. -->
+
+        </div>
+        <div class="form-group">
+          <div class="input-wrapper">
+            <label>Password:</label>
+            <div class="input-i">
+              <span class="img-user"><span class="glyphicon glyphicon-lock"></span></span>
+              <input type="password" value="" style="display: none"/>
+              <!--<input type={{type}} value="" placeholder="Password" name="Password" [(ngModel)]="Password" id="password"  />-->
+              <input type="password" class="form-control" placeholder="****" name="password" tabindex="2" ngModel required>
+            </div>
+          </div>
+          <!-- Since we are working with template driven forms, we can use the ngModel directive to capture the values of our forms. One thing to note if you are coming from Angular 1.x. Using ngModel as shown below creates a one-way data binding, so once we hit submit the data is only sent to the controller. If we wanted to use two-way data binding, we would have to wrap the ngModel in [()] and assign an attribute to it. Also the name of the field corresponds to the name attribute so our first input will be firstName. -->
+
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
